@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Weather
+{% endblock %}
+
+{% block main%}
+<div class = "mb-5 text-center" style = "color: white; opactity: 0 ">
+    <h1>
+        <i class="fa-solid fa-city"></i> {{ data["name"] }}
+    </h1>
+    <div class = "parent">
+        <div class = "breakline" style = "width : 400px"></div>
+    </div>
+    <h1 style = "font-size: 50px; padding : 10px;">{{temp_C}} ℃</h1>
+    <h3>
+        <i class="fa-solid fa-cloud"></i> General: {{ data["weather"][0]["description"]}}
+    </h3>
+    <h3>
+        <i class="fa-solid fa-temperature-three-quarters"></i> Temperature: {{temp_F}} ℉ | {{temp_C}} ℃
+    </h3>
+    <h3>
+        Feels like: {{temp_F_feel}} ℉ | {{temp_C_feel}} ℃
+    </h3>
+    <h3>
+        <i class="fa-solid fa-wind"></i> Wind: {{ data["wind"]["speed"] }} m/s
+    </h3>
+    <h3>
+        <i class="fa-solid fa-droplet"></i> Humidity: {{data["main"]["humidity"]}}
+    </h3>
+    <h3>
+        <i class="fa-solid fa-eye"></i> Visibility: {{data["visibility"]}} m
+    </h3>
+    <h3>
+        Sunrise: {{sunrise}} | Sunset: {{sunset}}
+    </h3>
+    <div class = "parent">
+        <div class = "breakline" style = "width: 700px"></div>
+    </div>
+    <h3>
+        Wind map
+    </h3>
+    <div class = "parent">
+        <iframe width="650" height="450" src= {{wind_map}} frameborder="0"></iframe>
+    </div>
+
+    <div class = "parent">
+        <div class = "breakline" style = "width: 700px"></div>
+    </div>
+    <h3>
+        Cloud map
+    </h3>
+    <div class = "parent">
+        <iframe width="650" height="450" src= {{cloud_map}} frameborder="0"></iframe>
+    </div>
+
+</div>
+
+{% endblock %}

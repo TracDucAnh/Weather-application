@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Weather
+{% endblock %}
+
+{% block main %}
+    <form action = "/" method = "post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="city" placeholder="City" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Load current weather data</button>
+    </form>
+{% endblock %}
